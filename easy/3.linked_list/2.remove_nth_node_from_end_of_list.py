@@ -9,33 +9,25 @@ class ListNode:
 """
 
 
-def length(self):
-    if self.val is None:
-        return 0
-    else:
-        return self.next.length() + 1
-
-
-ListNode.length = length
-
-
-def removeNthFromEnd(self, n: int) -> ListNode:
-    l = self.length()
-    print(l)
-
-    def loop(node, i):
-        if i == l-n+1:
-            node.val = node.next.val
-            node.next = node.next.next
-        else:
-            loop(node.next, i+1)
-    return loop(self, 1)
-
-
-ListNode.removeNthFromEnd = removeNthFromEnd
-
-
 class Solution:
+    def length(self, head):
+        if head is None:
+            return 0
+        else:
+            return self.length(head.next) + 1
+
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        l = self.length(head)
+
+        def loop(node, i):
+            if i == l-n+1:
+                node.val = node.next.val
+                node.next = node.next.next
+            else:
+                loop(node.next, i+1)
+        loop(head, 1)
+        return head
+
     def removeNthFromEndOptimal(self, head: ListNode, n: int) -> ListNode:
         # Initialize fast and slow
         fast = head
@@ -46,11 +38,11 @@ class Solution:
 
         # Side case: if fast took over the end of the list
         # It means it is the case where you want to remove the n-th last element (aka the first one)
-        if not fast.val:
+        if not fast:
             return head.next
 
         # Make fast and slow move until fast reaches the end of the list
-        while fast.next.val:
+        while fast.next:
             fast = fast.next
             slow = slow.next
         # Make slow skip the current node
@@ -62,4 +54,4 @@ if __name__ == "__main__":
     head = ListNode([1, 2, 3, 4, 5])
     print(head)
     n = 2
-    print(Solution().removeNthFromEndOptimal(head, n))
+    print(Solution().removeNthFromEnd(head, n))

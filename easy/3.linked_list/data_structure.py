@@ -1,8 +1,8 @@
 class ListNode():
     def __init__(self, x):
         if isinstance(x, list):
-            if not x:
-                self.val = None
+            if len(x) == 1:
+                self.val = x[0]
                 self.next = None
             else:
                 self.val = x[0]
@@ -13,8 +13,8 @@ class ListNode():
 
     def __str__(self):
 
-        if self.val is None:
-            return 'None'
+        if self.next is None:
+            return f"LinkedList({self.val}, None)"
         return f"LinkedList({self.val}, {self.next.__str__()})"
 
     def make_list_node_from_node(self, node: int):

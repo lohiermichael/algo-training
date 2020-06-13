@@ -25,8 +25,24 @@ class Solution:
             current = current.next
         return reverse
 
+    def reverseListRecursive(self, head: ListNode) -> ListNode:
+        def reverse(head):
+            if not head.next:
+                return head
+            else:
+                reverse_next = reverse(head.next)
+                return insert_end(reverse_next, head.val)
+
+        def insert_end(head, n):
+            current = head
+            while current.next:
+                current = current.next
+            current.next = ListNode(n)
+            return head
+        return reverse(head)
+
 
 if __name__ == "__main__":
     head = ListNode([1, 2, 3, 4, 5])
     print(head)
-    print(Solution().reverseListIterative(head))
+    print(Solution().reverseListRecursive(head))
