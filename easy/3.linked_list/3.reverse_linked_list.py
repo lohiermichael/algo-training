@@ -11,6 +11,7 @@ class ListNode:
 
 class Solution:
     def reverseListIterative(self, head: ListNode) -> ListNode:
+        # First store the elements in a normal list: stack while scanning though the linked list
         current = head
         stack = []
         while current.val:
@@ -18,7 +19,7 @@ class Solution:
             current = current.next
         reverse = ListNode(stack.pop())
         current = reverse
-        print(stack)
+        # Build the reverse list by poping the element from the stack one after another
         while stack:
             current.next = ListNode(stack.pop())
             current = current.next
