@@ -32,7 +32,7 @@ def make_example_2():
 
 class Solution:
     def helper(self, t1, t2):
-        return (not t1 and not t2) or (t1.val == t2.val and self.helper(t1.left, t2.right) and self.helper(t1.right, t2.left))
+        return (not t1 and not t2) or ((bool(t1) == bool(t2)) and (t1.val == t2.val and self.helper(t1.left, t2.right) and self.helper(t1.right, t2.left)))
 
     def isSymmetric(self, root: TreeNode) -> bool:
         return not root or self.helper(root.left, root.right)
@@ -41,3 +41,5 @@ class Solution:
 if __name__ == "__main__":
     root_1 = make_example_1()
     print(Solution().isSymmetric(root_1))
+    root_2 = make_example_2()
+    print(Solution().isSymmetric(root_2))
