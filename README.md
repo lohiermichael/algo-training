@@ -1,13 +1,25 @@
-# top-interview-questions
+# algo-training
 
-This is LeetCode's curated list of Top classic interview questions to help you
-land your dream job.
+This repo gathers algo exercises typically found in coding interviews.
+
+## top overview
+
+There is one folder by platform:
+
+- Hackerrank
+- Leetcode
+- other for any other platform I could have found along
+
+## Leetcode
+
+In the `Leetcode` folder there is a curated list of Top classic interview
+questions to help you land your dream job.
 
 Here is the
 [link](https://leetcode.com/explore/interview/card/top-interview-questions-easy/)
 to the Leetcode list.
 
-## Organization
+### Organization
 
 The exercises will be divided in three distinct levels:
 
@@ -30,7 +42,7 @@ This list covers problems about:
 - Math
 - Others
 
-## How to prepare the interview?
+### How to prepare the interview?
 
 After watching this example [video](https://youtu.be/wwIysnVmAUg?t=1268) of
 coding interview, I have learnt methods on how to structure my interview and
