@@ -14,6 +14,7 @@ The exercises will be divided in three distinct levels:
 - Easy
 - Medium
 - Hard
+- Other exercises: miscellaneous exercises found on Leetcode
 
 Each collection will be a collection of exercises.
 
